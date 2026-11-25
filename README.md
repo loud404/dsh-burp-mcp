@@ -55,7 +55,11 @@ AI / DSH
 
 **9876 是控制端口，8080 是网页代理端口，不要填反。**
 
-### 2. 下载、安装依赖、生成本机配置
+### 2. 选择安装方式
+
+**市场／Release 安装（推荐给只想使用的人）：** 下载或使用 [v1.3.2 安装包](https://github.com/loud404/dsh-burp-mcp/releases/download/v1.3.2/dsh-burp-mcp-1.3.2.tgz)。在 DSH **插件 → 添加插件**中输入该 `.tgz` 的完整 URL。安装无需构建脚本；需要 DSH 进程能找到独立 Node.js 22+ 的 `node` 命令、Burp MCP 和 Proxy 已开启。插件市场正式收录前，也可以手工用这个 URL 安装。若桌面 DSH 找不到 Node，请使用下面的本地目录流程来固定 Node 路径。
+
+**本地目录安装（便于指定 Node、Chrome 或端口）：**
 
 ```powershell
 git clone https://github.com/loud404/dsh-burp-mcp.git

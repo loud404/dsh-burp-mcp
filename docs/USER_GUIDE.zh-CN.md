@@ -2,7 +2,7 @@
 
 **这是什么：**它把 Burp 的官方 MCP 工具接入 DeepSeek Harness（DSH），让 AI 默认通过 Burp Proxy 发送 HTTP 请求，同时保留显式选择 Burp 扩展 HTTP API 的方式，方便你在 Burp 中查看和接管流量。
 
-本文面向 **1.3.1 公开版**，仓库：[loud404/dsh-burp-mcp](https://github.com/loud404/dsh-burp-mcp)。
+本文面向 **1.3.2 公开版**，仓库：[loud404/dsh-burp-mcp](https://github.com/loud404/dsh-burp-mcp)。
 已验证的 DSH 版本为 **0.2.2-rc.5**；其他版本请先核对仓库的兼容说明。
 
 ## 1. 先分清：MCP 是控制，Proxy 是流量
@@ -52,6 +52,18 @@ Burp 的 **9876 是 MCP 控制端口，8080 是 Proxy 流量端口**，不要互
 如果你在 Burp 中使用了其他端口，后面的配置也要一起改。
 
 ## 3. Windows 推荐安装流程
+
+### 可选：直接使用市场／Release 安装包
+
+如果 DSH 进程已能在 PATH 找到独立 Node.js 22+，可以直接在 **插件 → 添加插件**中输入固定版本安装包 URL：
+
+```text
+https://github.com/loud404/dsh-burp-mcp/releases/download/v1.3.2/dsh-burp-mcp-1.3.2.tgz
+```
+
+不需要从源码构建，也不需要安装期脚本；Burp MCP 和 Proxy 仍要先开启。正式市场收录完成后，可由市场条目进入该安装包。仓库里提供的只是安装包，不代表已经被市场收录。
+
+若 DSH 桌面进程找不到 `node`，或你要指定可执行路径/不同端口，使用下面可编辑的本地目录安装流程。不要在包管理器的缓存目录手改文件。
 
 ### 第一步：取得插件并安装依赖
 

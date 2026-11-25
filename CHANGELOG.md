@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2 — Marketplace distribution
+
+- Add a version-pinned GitHub Release tarball and SHA-256 checksum for storefront installs.
+- Declare the host-provided Schemastery package as a peer dependency, with a development dependency for local tests.
+- Document storefront installation separately from the editable local-directory workflow.
+
 ## 1.3.1 — Public distribution
 
 - Publish a portable configuration without machine-specific Node/Chrome paths.

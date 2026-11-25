@@ -58,7 +58,7 @@ export class BurpMcpGateway {
   }
   createServer() {
     const caps=this.upstream.getServerCapabilities?.()??{};
-    const server=new Server({name:'burp-mcp-routing-gateway',version:'1.3.1'},{capabilities:{tools:{listChanged:false},...(caps.resources?{resources:{}}:{})},instructions:'Burp HTTP testing stays on MCP: use send_http1_request/send_http2_request. Omit route for proxy (default through Burp Proxy); use route=extension only for the original Burp extension HTTP API. extension is still sent by Burp, not a non-Burp direct connection. Other MCP tools are forwarded unchanged. Proxy uses Proxy Intercept/history settings; extension uses original Burp MCP HTTP approval and Logger. Never auto-fallback between routes.'});
+    const server=new Server({name:'burp-mcp-routing-gateway',version:'1.3.2'},{capabilities:{tools:{listChanged:false},...(caps.resources?{resources:{}}:{})},instructions:'Burp HTTP testing stays on MCP: use send_http1_request/send_http2_request. Omit route for proxy (default through Burp Proxy); use route=extension only for the original Burp extension HTTP API. extension is still sent by Burp, not a non-Burp direct connection. Other MCP tools are forwarded unchanged. Proxy uses Proxy Intercept/history settings; extension uses original Burp MCP HTTP approval and Logger. Never auto-fallback between routes.'});
     server.setRequestHandler('tools/list',()=>this.list());
     server.setRequestHandler('tools/call',async(request,context)=>{
       let result;

@@ -13,7 +13,7 @@ test('configuration rejects invalid URLs and timeout budgets',()=>{
  assert.throws(()=>makeGatewayRegistration({requestTimeoutMs:1000,toolCallTimeoutMs:500}));assert.throws(()=>makeGatewayRegistration({gatewayNode:'relative/node'}));
 });
 test('manifest includes all runtime resources and no lifecycle scripts',async()=>{
- const pkg=JSON.parse(await read('package.json'));assert.equal(pkg.name,'@local/dsh-burp-mcp');assert.equal(pkg.version,'1.3.1');assert.equal(pkg.engines.dsh,'0.2.2-rc.5');
+ const pkg=JSON.parse(await read('package.json'));assert.equal(pkg.name,'@local/dsh-burp-mcp');assert.equal(pkg.version,'1.3.2');assert.equal(pkg.engines.dsh,'0.2.2-rc.5');
  for(const key of ['install','postinstall','prepare'])assert.equal(pkg.scripts[key],undefined);
  for(const filename of ['index.js','gateway-config.js','mcp-gateway.js','mcp-gateway-main.mjs','http-transport.js','browser-plugin.js','browser-manager.js','browser-config.js','README.md','LICENSE','icon.svg']){assert.ok(pkg.files.includes(filename));await access(new URL('../'+filename,import.meta.url));}
  assert.equal(pkg.exports['./routing'],undefined);assert.equal(pkg.dsh.bundle.patch,'./cordis.patch.yml');

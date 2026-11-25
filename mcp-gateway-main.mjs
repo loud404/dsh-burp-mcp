@@ -27,7 +27,7 @@ process.on('SIGINT',()=>void close().finally(()=>process.exit()));
 // No target request is sent until an MCP tools/call is received.
 handle=serveStdio(async()=>{
   shutdown.signal.throwIfAborted();
-  const client=new Client({name:'dsh-burp-routing-upstream',version:'1.3.1'},{capabilities:{},versionNegotiation:{mode:'legacy'},listMaxPages:32});
+  const client=new Client({name:'dsh-burp-routing-upstream',version:'1.3.2'},{capabilities:{},versionNegotiation:{mode:'legacy'},listMaxPages:32});
   clients.add(client);
   client.onerror=error=>console.error('Burp upstream:',error.message);
   const startup=AbortSignal.any([shutdown.signal,AbortSignal.timeout(startupTimeoutMs)]);
