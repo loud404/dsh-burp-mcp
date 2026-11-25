@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Burp 专用浏览器",
+    "description": "增加 burp_browser 工具，可打开、导航、查看或关闭独立 Chrome 窗口（自动寻找已安装的 Google Chrome/Chromium，或使用配置指定的路径）。默认 route=proxy，该窗口的 HTTP/HTTPS 与 WS/WSS 使用 127.0.0.1:8080 的 Burp Proxy；明确 route=direct 才直连（无代理和 Burp CA 例外），切换会删除旧临时登录态。代理失败不重试直连；9876 仍是 MCP 端口。HTTPS 仅对从本机 Burp 获取的 CA 公钥配置进程级证书错误例外，不安装系统证书，不忽略全部证书错误。下载和 Service Worker 在此测试会话中关闭。不更改系统代理、已有浏览器或其他网络工具。关闭窗口后临时 Cookie 随会话清理。地址及超时修改插件目录 cordis.patch.yml 后重启 DSH。"
+  }
+}

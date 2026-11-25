@@ -1,0 +1,19 @@
+- insert:
+    - id: burp-mcp
+      name: '@local/dsh-burp-mcp'
+      config:
+        url: http://127.0.0.1:9876/mcp
+        proxyUrl: http://127.0.0.1:8080
+        gatewayNode: node
+        startupTimeoutMs: 45000
+        toolCallTimeoutMs: 130000
+        requestTimeoutMs: 120000
+        closeTimeoutMs: 10000
+        maxResponseBytes: 2097152
+    - id: burp-proxy-browser
+      name: '@local/dsh-burp-mcp/browser'
+      config:
+        proxyUrl: http://127.0.0.1:8080
+        browserExecutable: ''
+        browserTimeoutMs: 20000
+        trustBurpCA: true

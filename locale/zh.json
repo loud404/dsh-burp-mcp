@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Burp MCP 接入",
+    "description": "两条发送路径都使用同一MCP工具：mcp__burp__send_http1_request/send_http2_request不填route默认proxy，经Burp Proxy 8080；指定extension调用真实Burp MCP（http://127.0.0.1:9876/mcp）的扩展HTTP API，仍由Burp发送，在Logger查看，不是绕过Burp直连。proxy使用Proxy Intercept，extension保留原MCP HTTP审批；失败不自动切路径。其他MCP工具保留。另保留专用Chrome辅助。侧栏「插件」管理，配置在cordis.patch.yml；工具清单启动时发现，变化后重连。"
+  },
+  "config": {
+    "url": "真实 Burp MCP 地址（含 /mcp）",
+    "proxyUrl": "Burp Proxy 监听地址",
+    "gatewayNode": "独立 Node 可执行路径",
+    "startupTimeoutMs": "网关完整启动预算（毫秒）",
+    "toolCallTimeoutMs": "外层 MCP 调用超时（毫秒）",
+    "requestTimeoutMs": "内部请求及审批预算（毫秒）",
+    "closeTimeoutMs": "网关关闭预算（毫秒）",
+    "maxResponseBytes": "代理响应字节上限"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Burp MCP connector",
+    "description": "Both HTTP sending routes stay on the same MCP tools: mcp__burp__send_http1_request/send_http2_request default to route=proxy through Burp Proxy 8080. route=extension invokes the real Burp MCP at http://127.0.0.1:9876/mcp using its original extension HTTP API, still sent by Burp and viewed in Logger, not non-Burp direct traffic. Proxy uses Proxy Intercept; extension keeps original MCP HTTP approval. No automatic route fallback. Other MCP tools remain. Dedicated Chrome remains optional. Manage in sidebar Plugins; edit cordis.patch.yml for configuration. Tool discovery is a startup snapshot; reconnect after changes."
+  },
+  "config": {
+    "url": "Real Burp MCP URL (including /mcp)",
+    "proxyUrl": "Burp Proxy listener URL",
+    "gatewayNode": "Standalone Node executable path",
+    "startupTimeoutMs": "Whole gateway startup budget (milliseconds)",
+    "toolCallTimeoutMs": "Outer MCP call timeout (milliseconds)",
+    "requestTimeoutMs": "Inner request and approval budget (milliseconds)",
+    "closeTimeoutMs": "Gateway cleanup budget (milliseconds)",
+    "maxResponseBytes": "Proxy response byte limit"
+  }
+}

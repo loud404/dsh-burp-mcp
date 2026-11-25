@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Burp dedicated browser",
+    "description": "Adds burp_browser to open, navigate, inspect, or close a separate Chrome window (auto-detects installed Google Chrome/Chromium, or uses a configured executable). Default route=proxy sends HTTP/HTTPS and WS/WSS through Burp Proxy 127.0.0.1:8080. Explicit route=direct disables proxy and Burp CA exceptions. Switching routes discards the old temporary sign-in state. No direct retry; port 9876 remains MCP. HTTPS uses a process-only certificate-error exception limited to the CA public key obtained from local Burp. Downloads and service workers are blocked. No system certificates, system proxy, existing browser, or other network tool is changed. Temporary cookies are discarded after closure. Edit cordis.patch.yml and restart DSH to change settings."
+  }
+}

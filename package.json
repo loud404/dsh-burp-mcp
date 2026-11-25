@@ -1,0 +1,27 @@
+{
+  "name": "@local/dsh-burp-mcp",
+  "version": "1.3.1",
+  "description": "MCP-controlled Burp testing with default Proxy routing and an explicit original extension HTTP API option.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "loud404",
+  "homepage": "https://github.com/loud404/dsh-burp-mcp#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/loud404/dsh-burp-mcp.git" },
+  "bugs": { "url": "https://github.com/loud404/dsh-burp-mcp/issues" },
+  "keywords": ["deepseek-harness", "dsh-plugin", "burp-suite", "mcp", "proxy"],
+  "engines": { "dsh": "0.2.2-rc.5", "node": ">=22" },
+  "exports": {
+    ".": "./index.js",
+    "./browser": "./browser-plugin.js",
+    "./browser/locale/*.json": "./browser-locale/*.json",
+    "./browser/icon": "./icon.svg",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "config.js", "gateway-config.js", "mcp-gateway.js", "mcp-gateway-main.mjs", "browser-plugin.js", "browser-config.js", "browser-manager.js", "http-transport.js", "cordis.patch.yml", "cordis.patch.example.yml", "locale", "browser-locale", "icon.svg", "README.md", "docs", "LICENSE", "THIRD_PARTY_NOTICES.md", "scripts/configure.mjs", "scripts/check.mjs", "tests", "CHANGELOG.md", "SECURITY.md"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "dependencies": { "@deepseek-ai/schemastery": "~3.19.0", "playwright-core": "1.65.1", "@modelcontextprotocol/client": "2.2.0", "@modelcontextprotocol/server": "2.2.0", "@modelcontextprotocol/core": "2.2.0", "ajv": "8.17.1" },
+  "scripts": { "test": "node --test tests/plugin.test.mjs tests/browser.test.mjs tests/gateway.test.mjs tests/gateway-wire.test.mjs tests/configure.test.mjs", "configure": "node scripts/configure.mjs", "check": "node scripts/check.mjs" }
+}
